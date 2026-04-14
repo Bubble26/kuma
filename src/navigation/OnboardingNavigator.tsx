@@ -2,16 +2,23 @@ import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createPlaceholder } from '../screens/onboarding/PlaceholderScreen';
 import S01_Welcome from '../screens/onboarding/S01_Welcome';
+import S02_ScaryStat from '../screens/onboarding/S02_ScaryStat';
+import S03_GentleLie from '../screens/onboarding/S03_GentleLie';
+import S04_DifferentChildren from '../screens/onboarding/S04_DifferentChildren';
+import S05_HiddenTriggers from '../screens/onboarding/S05_HiddenTriggers';
+import S06_BannedEurope from '../screens/onboarding/S06_BannedEurope';
+import S07_DifferentFormulas from '../screens/onboarding/S07_DifferentFormulas';
+import S08_Testimonials from '../screens/onboarding/S08_Testimonials';
 
 // ─── Param list for all 31 onboarding screens + post-payment ─────────────
 export type OnboardingStackParamList = {
   // Block 1: EDUCATION (1-8)
   S01_Welcome: undefined;
   S02_ScaryStat: undefined;
-  S03_BrandReveal: undefined;
-  S04_ThenNow_Shampoo: undefined;
-  S05_ThenNow_Cereal: undefined;
-  S06_BannedInEurope: undefined;
+  S03_GentleLie: undefined;
+  S04_DifferentChildren: undefined;
+  S05_HiddenTriggers: undefined;
+  S06_BannedEurope: undefined;
   S07_DifferentFormulas: undefined;
   S08_Testimonials: undefined;
 
@@ -51,10 +58,10 @@ export type OnboardingStackParamList = {
 export const SCREEN_ORDER: (keyof OnboardingStackParamList)[] = [
   'S01_Welcome',
   'S02_ScaryStat',
-  'S03_BrandReveal',
-  'S04_ThenNow_Shampoo',
-  'S05_ThenNow_Cereal',
-  'S06_BannedInEurope',
+  'S03_GentleLie',
+  'S04_DifferentChildren',
+  'S05_HiddenTriggers',
+  'S06_BannedEurope',
   'S07_DifferentFormulas',
   'S08_Testimonials',
   'S09_WhoAreYouProtecting',
@@ -95,10 +102,10 @@ type ScreenConfig = {
 const CONFIGS: Record<keyof OnboardingStackParamList, ScreenConfig> = {
   S01_Welcome:            { title: 'Welcome Splash', subtitle: 'Welcome to Kuma', block: 'EDUCATION', background: 'navy', canSkip: true },
   S02_ScaryStat:          { title: 'Scary Stat', subtitle: 'The truth about children\'s products', block: 'EDUCATION', background: 'navy', canSkip: true },
-  S03_BrandReveal:        { title: 'Brand Acquisition Reveal', subtitle: 'Tap to discover who really makes these products', block: 'EDUCATION', background: 'navy', canSkip: true },
-  S04_ThenNow_Shampoo:    { title: 'Then vs Now — Shampoo', subtitle: 'How children\'s shampoo has changed', block: 'EDUCATION', background: 'cream', canSkip: true },
-  S05_ThenNow_Cereal:     { title: 'Then vs Now — Cereal', subtitle: 'What happened to breakfast cereal', block: 'EDUCATION', background: 'cream', canSkip: true },
-  S06_BannedInEurope:     { title: 'Banned in Europe', subtitle: 'Ingredients allowed in the US but banned elsewhere', block: 'EDUCATION', background: 'navy', canSkip: true },
+  S03_GentleLie:        { title: 'The Gentle Lie', subtitle: 'Marketing labels vs. reality', block: 'EDUCATION', background: 'navy', canSkip: true },
+  S04_DifferentChildren:    { title: 'Different Children', subtitle: 'Same product, different scores', block: 'EDUCATION', background: 'navy', canSkip: true },
+  S05_HiddenTriggers:     { title: 'Hidden Triggers', subtitle: 'Real ingredients linked to conditions', block: 'EDUCATION', background: 'cream', canSkip: true },
+  S06_BannedEurope:     { title: 'Banned in Europe', subtitle: 'Banned for EU kids, sold to US kids', block: 'EDUCATION', background: 'navy', canSkip: true },
   S07_DifferentFormulas:  { title: 'Different Formulas', subtitle: 'Same brand, different ingredients by country', block: 'EDUCATION', background: 'navy', canSkip: true },
   S08_Testimonials:       { title: 'Parent Testimonials', subtitle: 'Real parents, real results', block: 'EDUCATION', background: 'navy', canSkip: true },
 
@@ -134,6 +141,13 @@ const CONFIGS: Record<keyof OnboardingStackParamList, ScreenConfig> = {
 // ─── Real screen components (replace placeholders as built) ─────────────
 const REAL_SCREENS: Partial<Record<keyof OnboardingStackParamList, React.ComponentType<any>>> = {
   S01_Welcome,
+  S02_ScaryStat,
+  S03_GentleLie,
+  S04_DifferentChildren,
+  S05_HiddenTriggers,
+  S06_BannedEurope,
+  S07_DifferentFormulas,
+  S08_Testimonials,
 };
 
 // ─── Create placeholder components for remaining screens ────────────────
