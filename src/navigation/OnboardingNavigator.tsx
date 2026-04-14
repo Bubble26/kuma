@@ -28,6 +28,10 @@ import S24_Notifications from '../screens/onboarding/S24_Notifications';
 import S25_Pledge from '../screens/onboarding/S25_Pledge';
 import S26_FakeLoading from '../screens/onboarding/S26_FakeLoading';
 import S27_ProfileReveal from '../screens/onboarding/S27_ProfileReveal';
+import S28_RatingPrompt from '../screens/onboarding/S28_RatingPrompt';
+import S29_CommitmentRitual from '../screens/onboarding/S29_CommitmentRitual';
+import S30_ReferralGate from '../screens/onboarding/S30_ReferralGate';
+import S31_Paywall from '../screens/onboarding/S31_Paywall';
 
 // ─── Param list for all 31 onboarding screens + post-payment ─────────────
 export type OnboardingStackParamList = {
@@ -186,6 +190,10 @@ const REAL_SCREENS: Partial<Record<keyof OnboardingStackParamList, React.Compone
   S25_KumaPledge: S25_Pledge,
   S26_FakeLoading,
   S27_ProfileReveal,
+  S28_RatingPrompt,
+  S29_CommitmentRitual,
+  S30_ReferralGate,
+  S31_Paywall,
 };
 
 // ─── Create placeholder components for remaining screens ────────────────
@@ -211,13 +219,18 @@ export default function OnboardingNavigator() {
         gestureEnabled: true,
       }}
     >
-      {SCREEN_ORDER.map((name) => (
-        <Stack.Screen
-          key={name}
-          name={name}
-          component={screens[name]}
-        />
-      ))}
+      {SCREEN_ORDER.map((name) => {
+        // Disable back gesture on commitment ritual and paywall
+        const noBack = name === 'S29_CommitmentRitual' || name === 'S31_Paywall';
+        return (
+          <Stack.Screen
+            key={name}
+            name={name}
+            component={screens[name]}
+            options={noBack ? { gestureEnabled: false } : undefined}
+          />
+        );
+      })}
     </Stack.Navigator>
   );
 }
