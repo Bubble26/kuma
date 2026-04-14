@@ -20,6 +20,10 @@ import S16_ScanDemoBad from '../screens/onboarding/S16_ScanDemoBad';
 import S17_ScanDemoGood from '../screens/onboarding/S17_ScanDemoGood';
 import S18_IngredientDecoder from '../screens/onboarding/S18_IngredientDecoder';
 import S19_ZipCode from '../screens/onboarding/S19_ZipCode';
+import S20_WaterTrends from '../screens/onboarding/S20_WaterTrends';
+import S21_CommunityRatings from '../screens/onboarding/S21_CommunityRatings';
+import S22_ShowsPreview from '../screens/onboarding/S22_ShowsPreview';
+import S23_BenefitCarousel from '../screens/onboarding/S23_BenefitCarousel';
 
 // ─── Param list for all 31 onboarding screens + post-payment ─────────────
 export type OnboardingStackParamList = {
@@ -170,6 +174,10 @@ const REAL_SCREENS: Partial<Record<keyof OnboardingStackParamList, React.Compone
   S17_ScanDemo_GoodSwap: S17_ScanDemoGood,
   S18_IngredientDecoder,
   S19_EnterZip: S19_ZipCode,
+  S20_WaterTrends,
+  S21_CommunityRatings,
+  S22_LowStimShows: S22_ShowsPreview,
+  S23_BenefitCarousel,
 };
 
 // ─── Create placeholder components for remaining screens ────────────────
