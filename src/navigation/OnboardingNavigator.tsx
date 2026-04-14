@@ -9,6 +9,13 @@ import S05_HiddenTriggers from '../screens/onboarding/S05_HiddenTriggers';
 import S06_BannedEurope from '../screens/onboarding/S06_BannedEurope';
 import S07_DifferentFormulas from '../screens/onboarding/S07_DifferentFormulas';
 import S08_Testimonials from '../screens/onboarding/S08_Testimonials';
+import S09_AddChild from '../screens/onboarding/S09_AddChild';
+import S10_SelectConditions from '../screens/onboarding/S10_SelectConditions';
+import S11_SymptomGrid from '../screens/onboarding/S11_SymptomGrid';
+import S12_Allergies from '../screens/onboarding/S12_Allergies';
+import S13_ScentedReaction from '../screens/onboarding/S13_ScentedReaction';
+import S14_Worries from '../screens/onboarding/S14_Worries';
+import S15_PriorApps from '../screens/onboarding/S15_PriorApps';
 
 // ─── Param list for all 31 onboarding screens + post-payment ─────────────
 export type OnboardingStackParamList = {
@@ -148,6 +155,13 @@ const REAL_SCREENS: Partial<Record<keyof OnboardingStackParamList, React.Compone
   S06_BannedEurope,
   S07_DifferentFormulas,
   S08_Testimonials,
+  S09_WhoAreYouProtecting: S09_AddChild,
+  S10_SelectConditions,
+  S11_SymptomGrid,
+  S12_Allergies,
+  S13_ScentedReaction,
+  S14_Worries,
+  S15_UsedOtherApps: S15_PriorApps,
 };
 
 // ─── Create placeholder components for remaining screens ────────────────
